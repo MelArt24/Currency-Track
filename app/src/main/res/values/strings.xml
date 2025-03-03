@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Currency Track</string>
+    <string name="choose_bank">Обрати банк</string>
+</resources>

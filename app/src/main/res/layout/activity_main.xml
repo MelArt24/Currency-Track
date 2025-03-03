@@ -1,0 +1,193 @@
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Панель інструментів -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        app:title="Курс валют"
+        app:titleTextColor="@android:color/white"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <!-- Заголовок -->
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="108dp"
+        android:text="Курс валют"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="HardcodedText" />
+
+    <!-- Таблиця курсів -->
+    <TableLayout
+        android:id="@+id/rateTable"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="30dp"
+        android:stretchColumns="1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle">
+
+        <!-- Рядок заголовка (Купівля | Продаж) -->
+        <TableRow>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingEnd="16dp"
+                android:text="Валюта"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingEnd="16dp"
+                android:text="Купівля"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingEnd="16dp"
+                android:text="Продаж"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                tools:ignore="HardcodedText" />
+        </TableRow>
+
+        <!-- Рядок для USD -->
+        <TableRow>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingEnd="16dp"
+                android:text="USD"
+                android:textSize="20sp"
+                android:gravity="center"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:id="@+id/tvDollarBuy"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingEnd="16dp"
+                android:text=""
+                android:textSize="20sp"
+                android:gravity="center"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:id="@+id/tvDollarSale"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingEnd="16dp"
+                android:text=""
+                android:textSize="20sp"
+                android:gravity="center"
+                tools:ignore="HardcodedText" />
+        </TableRow>
+
+        <!-- Рядок для EUR -->
+        <TableRow>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingEnd="16dp"
+                android:text="EUR"
+                android:textSize="20sp"
+                android:gravity="center"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:id="@+id/tvEuroBuy"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingEnd="16dp"
+                android:text=""
+                android:textSize="20sp"
+                android:gravity="center"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:id="@+id/tvEuroSale"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingEnd="16dp"
+                android:text=""
+                android:textSize="20sp"
+                android:gravity="center"
+                tools:ignore="HardcodedText" />
+        </TableRow>
+
+    </TableLayout>
+
+
+    <!-- Кнопка оновлення, поки що не використовуємо -->
+    <ImageButton
+        android:id="@+id/btnRefresh"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:contentDescription="refresh page"
+        android:src="@android:drawable/ic_menu_rotate"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="16dp"
+        tools:ignore="HardcodedText" />
+
+    <!-- Останнє оновлення -->
+    <TextView
+        android:id="@+id/tvLastUpdate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginBottom="32dp"
+        android:gravity="center"
+        android:text="Останнє оновлення:"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/dateTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text=""
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rateTable"
+        tools:ignore="MissingConstraints" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
